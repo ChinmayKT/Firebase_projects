@@ -1,0 +1,13 @@
+GET http://localhost:5001/africar-dev/us-central1/name
+
+###
+GET http://localhost:5001/africar-dev/us-central1/sum
+
+###
+GET http://localhost:5001/africar-dev/us-central1/dodjo
+
+###
+GET http://localhost:5001/africar-dev/us-central1/random
+
+###
+GET http://localhost:5001/africar-dev/us-central1/hello

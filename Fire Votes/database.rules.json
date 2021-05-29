@@ -1,0 +1,36 @@
+{
+  "rules": {
+    ".read": true,
+    "drivers": {
+      ".write": true,
+      "available_drivers": {
+        ".indexOn": "g"
+      }
+    },
+    "price_calculation": {
+      ".write": true
+    },
+    "rider_queue": {
+      "$rider_id": {
+        "driver_id": {
+          ".write": "!data.exists()"
+        },
+        "isAccepted": {
+          ".write": "data.val() === false"
+        },
+        "isVerified": {
+          ".write": "data.parent().child('isAccepted').val() == true"
+        },
+        "isCompleted": {
+          ".write": "data.parent().child('isVerified').val() == true"
+        },
+        "isCancelled": {
+          ".write": "data.val() == false"
+        },
+        "cancelled_by": {
+          ".write": true
+        }
+      }
+    }
+  }
+}
